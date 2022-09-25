@@ -1,8 +1,9 @@
 module barrel_shifter #(
-        parameter WIDTH = 16
+        parameter WIDTH = 16,
+        parameter AMOUNT_WIDTH = 8;
     )(
         input logic [WIDTH - 1:0] data_in,
-        input logic [WIDTH - 1:0] amount_in,
+        input logic [AMOUNT_WIDTH - 1:0] amount_in,
         input logic shift_dir_in,
         output logic [WIDTH - 1:0] data_out
     );
