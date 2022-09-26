@@ -10,7 +10,8 @@ module fp_adder #(
         parameter MANTISSA_WIDTH = 23
     )(
         input logic [EXP_WIDTH+MANTISSA_WIDTH:0] a_in, b_in,
-        output logic [EXP_WIDTH+MANTISSA_WIDTH:0] fpa_out
+        output logic [EXP_WIDTH+MANTISSA_WIDTH:0] fpa_out,
+        output logic overflow_out, underflow_out
     );
 
     //Internal Bus
@@ -20,6 +21,7 @@ module fp_adder #(
     logic [MANTISSA_WIDTH - 1:0] greater_mantissa, lesser_mantissa;
     logic [MANTISSA_WIDTH:0] lesser_ms, result, normal_mantissa;
     logic a_signal, b_signal, sub_N_flag, C_result, selected_signal;
+    logic overflow, underflow;
 
     assign a_signal   = a_in[EXP_WIDTH+MANTISSA_WIDTH];
     assign a_exp      = a_in[EXP_WIDTH+MANTISSA_WIDTH - 1:MANTISSA_WIDTH];
@@ -91,7 +93,9 @@ module fp_adder #(
         .expoent_in(selected_exp),
         .result_in({C_result, result}),
         .normal_e_out(normal_exp),
-        .normal_m_out(normal_mantissa)
+        .normal_m_out(normal_mantissa),
+        .overflow_out(overflow), 
+        .underflow_out(underflow)
     );
 
     rounder #(MANTISSA_WIDTH) m0(
@@ -109,5 +113,8 @@ module fp_adder #(
     assign fpa_out[EXP_WIDTH+MANTISSA_WIDTH] = selected_signal;
     assign fpa_out[EXP_WIDTH+MANTISSA_WIDTH - 1:MANTISSA_WIDTH] = normal_exp;
     assign fpa_out[MANTISSA_WIDTH - 1:0] = rounded_mantissa;
+    
+    assign overflow_out  = overflow;
+    assign underflow_out = underflow;
 
 endmodule
