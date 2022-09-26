@@ -35,37 +35,37 @@ module fp_adder #(
     mux_2x1 #(EXP_WIDTH) e_mux(
         .in_0(a_exp),
         .in_1(b_exp),
-        .sel_2x1_in(sub_N_flag),
+        .sel_2x1_in(e_dif[EXP_WIDTH]),
         .mux_2x1_out(selected_exp)
     );
 
     mux_2x1 #(MANTISSA_WIDTH) greater_mux(
         .in_0(a_mantissa),
         .in_1(b_mantissa),
-        .sel_2x1_in(sub_N_flag),
+        .sel_2x1_in(e_dif[EXP_WIDTH]),
         .mux_2x1_out(greater_mantissa)
     );
 
     mux_2x1 #(MANTISSA_WIDTH) lesser_mux(
         .in_0(a_mantissa),
         .in_1(b_mantissa),
-        .sel_2x1_in(~sub_N_flag),
+        .sel_2x1_in(~e_dif[EXP_WIDTH]),
         .mux_2x1_out(lesser_mantissa)
     );
 
-    alu_c #(EXP_WIDTH+1) e_sub(
+    alu_c #(EXP_WIDTH) e_sub(
         .alu_A_in({1'b0, a_exp}), 
         .alu_B_in({1'b0, b_exp}),
         .alu_op_in(1'b1),
-        .alu_out(e_dif),
+        .alu_out(e_dif[EXP_WIDTH-1:0]),
         .alu_Z_out(), 
-        .alu_N_out(sub_N_flag), 
-        .alu_C_out()
+        .alu_N_out(), 
+        .alu_C_out(e_dif[EXP_WIDTH])
     );
 
     number_complementer #(EXP_WIDTH+1) e_dif_comp(
         .number_in(e_dif),
-        .complement_in(sub_N_flag),
+        .complement_in(e_dif[EXP_WIDTH]),
         .number_out(comp_e_dif)
     );
 
@@ -106,7 +106,7 @@ module fp_adder #(
     mux_2x1 #(1) signal_mux(
         .in_0(a_signal),
         .in_1(b_signal),
-        .sel_2x1_in(sub_N_flag),
+        .sel_2x1_in(e_dif[EXP_WIDTH]),
         .mux_2x1_out(selected_signal)
     );
 
