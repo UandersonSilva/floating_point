@@ -54,8 +54,8 @@ module fp_adder #(
     );
 
     alu_c #(EXP_WIDTH) e_sub(
-        .alu_A_in({1'b0, a_exp}), 
-        .alu_B_in({1'b0, b_exp}),
+        .alu_A_in(a_exp), 
+        .alu_B_in(b_exp),
         .alu_op_in(1'b1),
         .alu_out(e_dif[EXP_WIDTH-1:0]),
         .alu_Z_out(), 
