@@ -12,7 +12,7 @@ module normalizer #(
     logic [MANTISSA_WIDTH + 2:0] result;
     logic over_under;
 
-    always_comb
+    always_latch
     begin
         result = {result_in, 1'b0};
 
