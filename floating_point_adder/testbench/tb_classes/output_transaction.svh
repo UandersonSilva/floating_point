@@ -4,12 +4,24 @@ class output_transaction;
 
     function bit compare(output_transaction compared);
         bit same = 0;
+        shortreal real_out, compared_real_out;
+
         if(compared == null)
             $display("%0t [OUTPUT TRANSACTION]: Null pointer. Comparison aborted.", $time);
         else
-            same = (compared.fpa_out == fpa_out) && 
+        begin
+            real_out = $bitstoshortreal(fpa_out);
+            compared_real_out = $bitstoshortreal(compared.fpa_out);
+
+            if((compared_real_out >= 0.98*real_out) && (compared_real_out =< 1.02*real_out))
+                same = 1;
+            else
+                same = 0;
+
+            same = same && 
                    (compared.overflow_out == overflow_out) &&
                    (compared.underflow_out == underflow_out);
+        end
 
         return same;
     endfunction : compare
