@@ -13,10 +13,20 @@ class output_transaction;
             real_out = $bitstoshortreal(fpa_out);
             compared_real_out = $bitstoshortreal(compared.fpa_out);
 
-            if((compared_real_out >= 0.98*real_out) && (compared_real_out =< 1.02*real_out))
-                same = 1;
+            if(compared_real_out >= 0)
+            begin
+                if((compared_real_out >= 0.98*real_out) && (compared_real_out <= 1.02*real_out))
+                    same = 1'b1;
+                else
+                    same = 0;
+            end
             else
-                same = 0;
+            begin
+                if((compared_real_out <= 0.98*real_out) && (compared_real_out >= 1.02*real_out))
+                    same = 1'b1;
+                else
+                    same = 0;
+            end
 
             same = same && 
                    (compared.overflow_out == overflow_out) &&

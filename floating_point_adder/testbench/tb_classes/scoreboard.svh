@@ -10,6 +10,8 @@ class scoreboard;
         output_transaction t_out, predicted;
         shortreal a_real, b_real, out_real;
 
+        integer exp_dif;
+
         forever 
         begin
             predicted = new();
@@ -25,15 +27,20 @@ class scoreboard;
 
                 predicted.fpa_out = $shortrealtobits(out_real);
 
-                if(t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] - t_in.b_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] >= 0)
+                exp_dif = t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] - t_in.b_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH];
+                //$display("%0t [SCOREBOARD]: %d", $time, exp_dif);
+
+                if(exp_dif >= 0)
                 begin
-                    if(t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH]-t_out.fpa_out[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] > 127)
+                    exp_dif = t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH]-predicted.fpa_out[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH];
+                    //$display("%0t [SCOREBOARD]: %d", $time, exp_dif);
+                    if(exp_dif > 127)
                     begin
                         predicted.overflow_out = 1;
                         predicted.underflow_out = 0;
                     end
                     
-                    else if(t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH]-t_out.fpa_out[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] < -127)
+                    else if(exp_dif < -127)
                     begin
                         predicted.overflow_out = 0;
                         predicted.underflow_out = 1;
@@ -47,13 +54,15 @@ class scoreboard;
                 end
                 else
                 begin
-                    if(t_in.b_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH]-t_out.fpa_out[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] > 127)
+                    exp_dif = t_in.b_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH]-predicted.fpa_out[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH];
+                    //$display("%0t [SCOREBOARD]: %d", $time, exp_dif);
+                    if(exp_dif > 127)
                     begin
                         predicted.overflow_out = 1;
                         predicted.underflow_out = 0;
                     end
                     
-                    else if(t_in.b_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH]-t_out.fpa_out[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] < -127)
+                    else if(exp_dif < -127)
                     begin
                         predicted.overflow_out = 0;
                         predicted.underflow_out = 1;
@@ -76,10 +85,18 @@ class scoreboard;
                 $display("%0t [SCOREBOARD]: No output transaction. Null pointer.", $time);
             else
             begin
-                if(t_out.compare(predicted))
+                if(predicted.compare(t_out))
+                begin
+                    $write("%c[2;34m",27);//blue
                     $display("%0t", $time, {" [SCOREBOARD]: PASS:: ", t_out.convert2string(), " || Predicted => ", predicted.convert2string()});
+                    $write("%c[2;0m",27);//standard color
+                end
                 else
+                begin
+                    $display("%c[2;31m",27);//red
                     $display("%0t", $time, {" [SCOREBOARD]: FAIL:: ", t_out.convert2string(), " || Predicted => ", predicted.convert2string()});
+                    $write("%c[2;0m",27);//standard color
+                end
             end
         end
     endtask : run
