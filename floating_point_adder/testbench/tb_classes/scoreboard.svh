@@ -34,13 +34,13 @@ class scoreboard;
                 begin
                     exp_dif = t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH]-predicted.fpa_out[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH];
                     //$display("%0t [SCOREBOARD]: %d", $time, exp_dif);
-                    if(exp_dif > 127)
+                    if(exp_dif > 128)
                     begin
                         predicted.overflow_out = 1;
                         predicted.underflow_out = 0;
                     end
                     
-                    else if(exp_dif < -127)
+                    else if(exp_dif < -128)
                     begin
                         predicted.overflow_out = 0;
                         predicted.underflow_out = 1;

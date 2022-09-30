@@ -19,14 +19,5 @@ class random_test extends base_test;
 
             super.obtain_data();
         end
-
-        data_i = new();
-        data_i.a_in = 32'hC0000000; //-2;
-        data_i.b_in = 32'h3F000000; //0.5
-        super.insert_data();
-      
-        @(data_i.done);
-
-        super.obtain_data();
     endtask : run
 endclass : random_test

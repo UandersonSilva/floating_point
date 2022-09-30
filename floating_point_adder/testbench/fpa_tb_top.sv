@@ -15,7 +15,7 @@ module fpa_tb_top;
         .underflow_out(fpa_if.underflow_out)
     );
 
-    random_test t0;
+    initial_test t0;
 
     initial
     begin

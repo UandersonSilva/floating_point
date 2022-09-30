@@ -16,6 +16,7 @@ package fpa_tb_pkg;
     `include "./tb_classes/env.svh"
     `include "./tb_classes/base_test.svh"
     
+    `include "./tb_classes/initial_test.svh"
     `include "./tb_classes/random_test.svh"
 
 endpackage : fpa_tb_pkg
