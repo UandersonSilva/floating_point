@@ -16,9 +16,9 @@ module normalizer #(
     begin
         result = {result_in, 1'b0};
 
-        if(result_in[MANTISSA_WIDTH:0] == {(MANTISSA_WIDTH+1){1'b0}})
+        if(result_in[MANTISSA_WIDTH+1:0] == {(MANTISSA_WIDTH+2){1'b0}})
         begin
-            normal_e_out = {1'b0, {(EXP_WIDTH-1){1'b1}}};
+            normal_e_out = {1'b0, {(EXP_WIDTH-1){1'b0}}};
             normal_m_out <= result_in[MANTISSA_WIDTH:0];
 
             over_under = 1'b0;

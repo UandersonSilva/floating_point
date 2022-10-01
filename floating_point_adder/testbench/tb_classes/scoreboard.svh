@@ -87,14 +87,14 @@ class scoreboard;
             begin
                 if(predicted.compare(t_out))
                 begin
-                    $write("%c[2;34m",27);//blue
-                    $display("%0t", $time, {" [SCOREBOARD]: PASS:: ", t_out.convert2string(), " || Predicted => ", predicted.convert2string()});
+                    //$write("%c[2;34m",27);//blue
+                    $display("%c[2;34m", 27, "%0t", $time, {" [SCOREBOARD]: PASS:: ", t_out.convert2string(), " || Predicted => ", predicted.convert2string()});
                     $write("%c[2;0m",27);//standard color
                 end
                 else
                 begin
-                    $display("%c[2;31m",27);//red
-                    $display("%0t", $time, {" [SCOREBOARD]: FAIL:: ", t_out.convert2string(), " || Predicted => ", predicted.convert2string()});
+                    //$display("%c[2;31m",27);//red
+                    $display("%c[2;31m", 27, "%0t", $time, {" [SCOREBOARD]: FAIL:: ", t_out.convert2string(), " || Predicted => ", predicted.convert2string()});
                     $write("%c[2;0m",27);//standard color
                 end
             end

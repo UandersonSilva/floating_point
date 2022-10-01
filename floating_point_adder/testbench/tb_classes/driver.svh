@@ -18,7 +18,7 @@ class driver;
                                  data_i.b_in,  
                                  data_i.fpa_out, 
                                  data_i.overflow_out,
-                                 data_i.overflow_out
+                                 data_i.underflow_out
                                 );
                 ->data_i.done;
 

@@ -22,11 +22,11 @@ interface fpa_interface();
     end
 
     task send_data(
-            logic [EXP_WIDTH+MANTISSA_WIDTH:0] ia_in,
-            logic [EXP_WIDTH+MANTISSA_WIDTH:0] ib_in,
-            logic [EXP_WIDTH+MANTISSA_WIDTH:0] ifpa_out,
-            logic overflow,
-            logic underflow
+            input logic [EXP_WIDTH+MANTISSA_WIDTH:0] ia_in,
+            input logic [EXP_WIDTH+MANTISSA_WIDTH:0] ib_in,
+            output logic [EXP_WIDTH+MANTISSA_WIDTH:0] ifpa_out,
+            output logic overflow,
+            output logic underflow
         );
         @(clock);
        
