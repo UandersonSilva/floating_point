@@ -45,3 +45,34 @@
 #    Time: 97 ns  Iteration: 0  Instance: /fpa_tb_top
 # End time: 08:41:19 on Oct 03,2022, Elapsed time: 0:01:16
 # Errors: 0, Warnings: 1
+
+# [TB_TOP] Running FIBONACCI_TEST
+#
+# 1 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.000000
+# 2 [SCOREBOARD]: FAIL:: fpa_out: 0.000000 overflow_out: x underflow_out: x || Predicted => fpa_out: 0.000000 overflow_out: 0 underflow_out: 0
+# 11 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 1.000000
+# 12 [SCOREBOARD]: PASS:: fpa_out: 1.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 1.000000 overflow_out: 0 underflow_out: 0
+# 21 [SCOREBOARD]: INPUT:: a_in: 1.000000 b_in: 1.000000
+# 22 [SCOREBOARD]: PASS:: fpa_out: 2.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 2.000000 overflow_out: 0 underflow_out: 0
+# 31 [SCOREBOARD]: INPUT:: a_in: 1.000000 b_in: 2.000000
+# 32 [SCOREBOARD]: PASS:: fpa_out: 3.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 3.000000 overflow_out: 0 underflow_out: 0
+# 41 [SCOREBOARD]: INPUT:: a_in: 2.000000 b_in: 3.000000
+# 42 [SCOREBOARD]: PASS:: fpa_out: 5.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 5.000000 overflow_out: 0 underflow_out: 0
+# 51 [SCOREBOARD]: INPUT:: a_in: 3.000000 b_in: 5.000000
+# 52 [SCOREBOARD]: PASS:: fpa_out: 8.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 8.000000 overflow_out: 0 underflow_out: 0
+# 61 [SCOREBOARD]: INPUT:: a_in: 5.000000 b_in: 8.000000
+# 62 [SCOREBOARD]: PASS:: fpa_out: 13.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 13.000000 overflow_out: 0 underflow_out: 0
+# 71 [SCOREBOARD]: INPUT:: a_in: 8.000000 b_in: 13.000000
+# 72 [SCOREBOARD]: PASS:: fpa_out: 21.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 21.000000 overflow_out: 0 underflow_out: 0
+# 81 [SCOREBOARD]: INPUT:: a_in: 13.000000 b_in: 21.000000
+# 82 [SCOREBOARD]: PASS:: fpa_out: 34.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 34.000000 overflow_out: 0 underflow_out: 0
+# 91 [SCOREBOARD]: INPUT:: a_in: 21.000000 b_in: 34.000000
+# 92 [SCOREBOARD]: PASS:: fpa_out: 55.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 55.000000 overflow_out: 0 underflow_out: 0
+# 101 [SCOREBOARD]: INPUT:: a_in: 34.000000 b_in: 55.000000
+# 102 [SCOREBOARD]: PASS:: fpa_out: 89.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 89.000000 overflow_out: 0 underflow_out: 0
+# 111 [SCOREBOARD]: INPUT:: a_in: 55.000000 b_in: 89.000000
+# 112 [SCOREBOARD]: PASS:: fpa_out: 144.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpa_out: 144.000000 overflow_out: 0 underflow_out: 0
+# ** Note: $finish    : ../testbench/fpa_tb_top.sv(64)
+#    Time: 117 ns  Iteration: 0  Instance: /fpa_tb_top
+# End time: 09:47:31 on Oct 03,2022, Elapsed time: 0:01:21
+# Errors: 0, Warnings: 1

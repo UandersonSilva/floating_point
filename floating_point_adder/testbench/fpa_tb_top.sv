@@ -38,6 +38,13 @@ module fpa_tb_top;
                 t0 = selected;
             end
 
+            "FIBONACCI_TEST":
+            begin
+                fibonacci_test selected;
+                selected = new();
+                t0 = selected;
+            end
+
             default:
             begin
                 random_test selected;

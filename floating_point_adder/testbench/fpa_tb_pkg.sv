@@ -18,5 +18,6 @@ package fpa_tb_pkg;
     
     `include "./tb_classes/initial_test.svh"
     `include "./tb_classes/random_test.svh"
+    `include "./tb_classes/fibonacci_test.svh"
 
 endpackage : fpa_tb_pkg
