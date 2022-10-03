@@ -53,7 +53,7 @@ module fpa_tb_top;
         $display("%c[0m", 27);
         
         t0.run();
-        #2;
+        #5;
         $finish;
     end
 endmodule : fpa_tb_top
