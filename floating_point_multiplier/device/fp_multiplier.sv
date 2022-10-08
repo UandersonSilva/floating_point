@@ -12,8 +12,9 @@ module fp_multiplier #(
     );
 
     logic a_signal, b_signal, carry;
-    logic [EXP_WIDTH - 1:0] a_exp, b_exp, a_exp_nobias, result_exp;
-    logic [MANTISSA_WIDTH - 1:0] a_mantissa, b_mantissa;
+    logic [EXP_WIDTH - 1:0] a_exp, b_exp, a_exp_nobias, result_exp, normal_exp;
+    logic [MANTISSA_WIDTH - 1:0] a_mantissa, b_mantissa, rounded_mantissa;
+    logic [MANTISSA_WIDTH:0] normal_mantissa;
     logic [2*(MANTISSA_WIDTH+1) - 1:0] product_mantissa;
 
     assign a_signal   = a_in[EXP_WIDTH+MANTISSA_WIDTH];
@@ -37,7 +38,7 @@ module fp_multiplier #(
     alu_c #(EXP_WIDTH) e_add(
         .alu_A_in(a_exp_nobias),
         .alu_B_in(b_exp),
-        .alu_op_in(1'b1),
+        .alu_op_in(1'b0),
         .alu_out(result_exp),
         .alu_Z_out(),
         .alu_N_out(),
@@ -54,7 +55,7 @@ module fp_multiplier #(
     );
 
     normalizer #(EXP_WIDTH, MANTISSA_WIDTH) n0(
-        .expoent_in(selected_exp),
+        .expoent_in(result_exp),
         .result_in(product_mantissa),
         .carry_in(carry),
         .normal_e_out(normal_exp),
