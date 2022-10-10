@@ -4,7 +4,6 @@ module normalizer #(
     )(
         input logic [EXP_WIDTH - 1:0] expoent_in,
         input logic [2*(MANTISSA_WIDTH+1) - 1:0] result_in,
-        input logic carry_in,
         output logic [EXP_WIDTH - 1:0] normal_e_out,
         output logic [MANTISSA_WIDTH:0] normal_m_out,
         output logic overflow_out, underflow_out
@@ -23,7 +22,7 @@ module normalizer #(
             normal_m_out <= result_in[2*(MANTISSA_WIDTH+1)-3:MANTISSA_WIDTH-1];
 
             over_under = 1'b0;
-            overflow_out <= carry_in;
+            overflow_out <= 1'b0;
             underflow_out <= 1'b0;
         end
         else if(result[2*(MANTISSA_WIDTH+1)-1])
@@ -31,7 +30,7 @@ module normalizer #(
             {over_under, normal_e_out} = expoent_in + 1;
             normal_m_out <= result_in[2*(MANTISSA_WIDTH+1)-2:MANTISSA_WIDTH];
 
-            overflow_out <= over_under | carry_in;
+            overflow_out <= over_under;
             underflow_out <= 1'b0;
         end
         else
@@ -40,7 +39,7 @@ module normalizer #(
             normal_m_out <= result_in[2*(MANTISSA_WIDTH+1)-3:MANTISSA_WIDTH-1];
 
             over_under = 1'b0;
-            overflow_out <= carry_in;
+            overflow_out <= 1'b0;
             underflow_out <= 1'b0;
         end 
     end

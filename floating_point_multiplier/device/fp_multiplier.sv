@@ -42,7 +42,7 @@ module fp_multiplier #(
         .alu_out(result_exp),
         .alu_Z_out(),
         .alu_N_out(),
-        .alu_C_out(carry)
+        .alu_C_out()
     );
 
     assign zero_a = (a_in[EXP_WIDTH+MANTISSA_WIDTH-1:0] == {(EXP_WIDTH+MANTISSA_WIDTH){1'b0}}) ? 1'b1 : 1'b0;
@@ -57,7 +57,6 @@ module fp_multiplier #(
     normalizer #(EXP_WIDTH, MANTISSA_WIDTH) n0(
         .expoent_in(result_exp),
         .result_in(product_mantissa),
-        .carry_in(carry),
         .normal_e_out(normal_exp),
         .normal_m_out(normal_mantissa),
         .overflow_out(overflow), 
