@@ -79,3 +79,31 @@
 # ** Note: $finish    : ../testbench/fpm_tb_top.sv(64)
 #    Time: 107 ns  Iteration: 0  Instance: /fpm_tb_top
 # End time: 11:12:57 on Oct 14,2022, Elapsed time: 0:01:37
+
+# [TB_TOP] Running OFUF_TEST
+#
+# 1 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.000000
+# 2 [SCOREBOARD]: PASS:: fpm_out: 0.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpm_out: 0.000000 overflow_out: 0 underflow_out: 0
+# 11 [SCOREBOARD]: INPUT:: a_in: 20424611560450686976.000000 b_in: 11561644717297956331093753856.000000
+# 12 [SCOREBOARD]: FAIL:: fpm_out: 0.000000 overflow_out: 1 underflow_out: 0 || Predicted => fpm_out: inf overflow_out: 1 underflow_out: 0
+# 21 [SCOREBOARD]: INPUT:: a_in: 18462575427584.000000 b_in: -2785057253288329609216.000000
+# 22 [SCOREBOARD]: PASS:: fpm_out: -51419330011525569315786103189405696.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpm_out: -51419330011525569315786103189405696.000000 overflow_out: 0 underflow_out: 0
+# 31 [SCOREBOARD]: INPUT:: a_in: -3080394344113576344543035392.000000 b_in: 4623991620038030661368414208.000000
+# 32 [SCOREBOARD]: FAIL:: fpm_out: -0.000000 overflow_out: 1 underflow_out: 0 || Predicted => fpm_out: -inf overflow_out: 1 underflow_out: 0
+# 41 [SCOREBOARD]: INPUT:: a_in: -68847272984576.000000 b_in: 40572378496892928.000000
+# 42 [SCOREBOARD]: PASS:: fpm_out: -2793297757388961911510157754368.000000 overflow_out: 0 underflow_out: 0 || Predicted => fpm_out: -2793297757388961911510157754368.000000 overflow_out: 0 underflow_out: 0
+# 51 [SCOREBOARD]: INPUT:: a_in: -3710294280980868275839696896.000000 b_in: 22620873322708548955668480.000000
+# 52 [SCOREBOARD]: FAIL:: fpm_out: -0.000000 overflow_out: 1 underflow_out: 0 || Predicted => fpm_out: -inf overflow_out: 1 underflow_out: 0
+# 61 [SCOREBOARD]: INPUT:: a_in: -0.000000 b_in: 0.000000
+# 62 [SCOREBOARD]: FAIL:: fpm_out: -954800346068215136256.000000 overflow_out: 0 underflow_out: 1 || Predicted => fpm_out: -0.000000 overflow_out: 0 underflow_out: 1
+# 71 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.000000
+# 72 [SCOREBOARD]: FAIL:: fpm_out: 369195939796322169894469632.000000 overflow_out: 0 underflow_out: 1 || Predicted => fpm_out: 0.000000 overflow_out: 0 underflow_out: 1
+# 81 [SCOREBOARD]: INPUT:: a_in: -0.000000 b_in: -0.000000
+# 82 [SCOREBOARD]: FAIL:: fpm_out: 36269861874424303624369733632.000000 overflow_out: 0 underflow_out: 1 || Predicted => fpm_out: 0.000000 overflow_out: 0 underflow_out: 1
+# 91 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.000000
+# 92 [SCOREBOARD]: FAIL:: fpm_out: 1067409054838428794880.000000 overflow_out: 0 underflow_out: 1 || Predicted => fpm_out: 0.000000 overflow_out: 0 underflow_out: 1
+# 101 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: -0.000000
+# 102 [SCOREBOARD]: FAIL:: fpm_out: -748627904092169475142451200.000000 overflow_out: 0 underflow_out: 1 || Predicted => fpm_out: -0.000000 overflow_out: 0 underflow_out: 1
+# ** Note: $finish    : ../testbench/fpm_tb_top.sv(71)
+#    Time: 107 ns  Iteration: 0  Instance: /fpm_tb_top
+# End time: 12:00:10 on Oct 14,2022, Elapsed time: 0:01:23

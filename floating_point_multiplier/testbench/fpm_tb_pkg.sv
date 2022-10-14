@@ -19,5 +19,6 @@ package fpm_tb_pkg;
     `include "./tb_classes/initial_test.svh"
     `include "./tb_classes/random_test.svh"
     `include "./tb_classes/factorial_test.svh"
+    `include "./tb_classes/ofuf_test.svh"
 
 endpackage : fpm_tb_pkg

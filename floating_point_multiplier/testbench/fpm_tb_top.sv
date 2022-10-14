@@ -45,6 +45,13 @@ module fpm_tb_top;
                 t0 = selected;
             end
 
+            "OFUF_TEST":
+            begin
+                ofuf_test selected;
+                selected = new();
+                t0 = selected;
+            end
+
             default:
             begin
                 random_test selected;
