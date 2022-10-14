@@ -30,7 +30,7 @@ class scoreboard;
                 exp_sum = t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] + t_in.b_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] - 254;
                 //$display("%0t [SCOREBOARD]: %d", $time, exp_sum);
 
-                if((t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:0] == 0) && (t_in.b_in[EXP_WIDTH+MANTISSA_WIDTH-1:0] == 0))
+                if((t_in.a_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] == 0) && (t_in.b_in[EXP_WIDTH+MANTISSA_WIDTH-1:MANTISSA_WIDTH] == 0))
                 begin
                     predicted.overflow_out = 0;
                     predicted.underflow_out = 0;
