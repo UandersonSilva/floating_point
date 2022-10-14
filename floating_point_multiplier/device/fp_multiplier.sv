@@ -1,4 +1,5 @@
 `include "multiplier/fast_multiplier.sv"
+`include "ofuf_checker.sv"
 `include "normalizer.sv"
 `include "rounder.sv"
 
@@ -11,7 +12,7 @@ module fp_multiplier #(
         output logic overflow_out, underflow_out
     );
 
-    logic a_signal, b_signal, carry;
+    logic a_signal, b_signal, carry, ofuf_overflow, overflow, underflow;
     logic [EXP_WIDTH - 1:0] a_exp, b_exp, a_exp_nobias, result_exp, normal_exp;
     logic [MANTISSA_WIDTH - 1:0] a_mantissa, b_mantissa, rounded_mantissa;
     logic [MANTISSA_WIDTH:0] normal_mantissa;
@@ -59,7 +60,14 @@ module fp_multiplier #(
         .result_in(product_mantissa),
         .normal_e_out(normal_exp),
         .normal_m_out(normal_mantissa),
-        .overflow_out(overflow), 
+        .overflow_out(overflow)
+    );
+
+    ofuf_checker #(EXP_WIDTH) ofuf0(
+        .a_exp_in(a_exp),
+        .b_exp_in(b_exp),
+        .exp_sum_in(result_exp),
+        .overflow_out(ofuf_overflow),
         .underflow_out(underflow)
     );
 
@@ -72,6 +80,6 @@ module fp_multiplier #(
     assign fpm_out[EXP_WIDTH+MANTISSA_WIDTH - 1:MANTISSA_WIDTH] = normal_exp;
     assign fpm_out[MANTISSA_WIDTH - 1:0] = rounded_mantissa;
     
-    assign overflow_out  = overflow;
+    assign overflow_out  = ofuf_overflow | overflow;
     assign underflow_out = underflow;
 endmodule
