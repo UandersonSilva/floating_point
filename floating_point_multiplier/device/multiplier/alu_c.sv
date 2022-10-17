@@ -8,14 +8,9 @@ module alu_c #(
         output logic alu_Z_out, alu_N_out, alu_C_out
     );
 
-    localparam _add = 1'b0, _sub = 1'b1;
-
     always_comb
     begin
-        if(alu_op_in)
-            {alu_C_out, alu_out} = alu_A_in - alu_B_in;
-        else
-            {alu_C_out, alu_out} = alu_A_in + alu_B_in;
+        {alu_C_out, alu_out} = alu_A_in + (alu_B_in^{WIDTH{alu_op_in}}) + alu_op_in;
         
         if(alu_out=={WIDTH{1'b0}})
             alu_Z_out <= 1'b1;
