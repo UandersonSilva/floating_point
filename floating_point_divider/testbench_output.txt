@@ -1,0 +1,98 @@
+# [TB_TOP] Running INITIAL_TEST
+#
+# ** Error (suppressible): (vsim-8604) ../testbench/./tb_classes/scoreboard.svh(26): NaN (not a number) resulted from a division operation.     
+# 1 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.000000
+# 2 [SCOREBOARD]: FAIL:: fpm_out: 0.000000 overflow_out: 0 underflow_out: 0 dbz_out: x || Predicted => fpm_out: -nan(ind) overflow_out: 0 underflow_out: 0 dbz_out: 0
+# ** Error (suppressible): (vsim-8604) ../testbench/./tb_classes/scoreboard.svh(26): NaN (not a number) resulted from a division operation.     
+# 11 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.000000
+# 12 [SCOREBOARD]: FAIL:: fpm_out: 1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 1 || Predicted => fpm_out: -nan(ind) overflow_out: 0 underflow_out: 0 dbz_out: 1
+# 21 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.500000
+# 22 [SCOREBOARD]: PASS:: fpm_out: 0.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 31 [SCOREBOARD]: INPUT:: a_in: 0.500000 b_in: 0.500000
+# 32 [SCOREBOARD]: PASS:: fpm_out: 1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 41 [SCOREBOARD]: INPUT:: a_in: -0.500000 b_in: 0.500000
+# 42 [SCOREBOARD]: PASS:: fpm_out: -1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 51 [SCOREBOARD]: INPUT:: a_in: 1.000000 b_in: -0.500000
+# 52 [SCOREBOARD]: PASS:: fpm_out: -2.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -2.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 61 [SCOREBOARD]: INPUT:: a_in: 1.000000 b_in: 1.000000
+# 62 [SCOREBOARD]: PASS:: fpm_out: 1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 71 [SCOREBOARD]: INPUT:: a_in: 1.000000 b_in: 1.500000
+# 72 [SCOREBOARD]: PASS:: fpm_out: 0.666667 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.666667 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 81 [SCOREBOARD]: INPUT:: a_in: 2.000000 b_in: -0.500000
+# 82 [SCOREBOARD]: PASS:: fpm_out: -4.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -4.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 91 [SCOREBOARD]: INPUT:: a_in: -2.000000 b_in: 0.500000
+# 92 [SCOREBOARD]: PASS:: fpm_out: -4.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -4.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 101 [SCOREBOARD]: INPUT:: a_in: 2.000000 b_in: -2.000000
+# 102 [SCOREBOARD]: PASS:: fpm_out: -1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -1.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 111 [SCOREBOARD]: INPUT:: a_in: 1.000000 b_in: 3.000000
+# 112 [SCOREBOARD]: PASS:: fpm_out: 0.333333 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.333333 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 121 [SCOREBOARD]: INPUT:: a_in: 5.000000 b_in: 7.000000
+# 122 [SCOREBOARD]: PASS:: fpm_out: 0.714286 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.714286 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 131 [SCOREBOARD]: INPUT:: a_in: 1.000000 b_in: 9.000000
+# 132 [SCOREBOARD]: PASS:: fpm_out: 0.111111 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.111111 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 141 [SCOREBOARD]: INPUT:: a_in: 1.000000 b_in: 11.000000
+# 142 [SCOREBOARD]: PASS:: fpm_out: 0.090909 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.090909 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# ** Note: $finish    : ../testbench/fpd_tb_top.sv(65)
+#    Time: 147 ns  Iteration: 0  Instance: /fpd_tb_top
+# End time: 10:29:10 on Nov 03,2022, Elapsed time: 0:01:41
+
+# [TB_TOP] Running RANDOM_TEST
+#
+# ** Error (suppressible): (vsim-8604) ../testbench/./tb_classes/scoreboard.svh(26): NaN (not a number) resulted from a division operation.     
+# 1 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.000000
+# 2 [SCOREBOARD]: FAIL:: fpm_out: 0.000000 overflow_out: 0 underflow_out: 0 dbz_out: x || Predicted => fpm_out: -nan(ind) overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 11 [SCOREBOARD]: INPUT:: a_in: 1.452262 b_in: -0.025520
+# 12 [SCOREBOARD]: PASS:: fpm_out: -56.906670 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -56.906673 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 21 [SCOREBOARD]: INPUT:: a_in: -31.138874 b_in: 0.075734
+# 22 [SCOREBOARD]: PASS:: fpm_out: -411.162018 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -411.162048 overflow_out: 0 
+underflow_out: 0 dbz_out: 0
+# 31 [SCOREBOARD]: INPUT:: a_in: -0.007370 b_in: -0.100355
+# 32 [SCOREBOARD]: PASS:: fpm_out: 0.073441 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.073441 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 41 [SCOREBOARD]: INPUT:: a_in: -0.002801 b_in: -0.697716
+# 42 [SCOREBOARD]: PASS:: fpm_out: 0.004014 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.004014 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 51 [SCOREBOARD]: INPUT:: a_in: 56.894321 b_in: 311.683594
+# 52 [SCOREBOARD]: PASS:: fpm_out: 0.182539 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.182539 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 61 [SCOREBOARD]: INPUT:: a_in: -1971.148438 b_in: -1.905145
+# 62 [SCOREBOARD]: PASS:: fpm_out: 1034.645020 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 1034.645020 overflow_out: 0 
+underflow_out: 0 dbz_out: 0
+# 71 [SCOREBOARD]: INPUT:: a_in: -160.867722 b_in: 0.019328
+# 72 [SCOREBOARD]: PASS:: fpm_out: -8322.917969 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -8322.917969 overflow_out: 
+0 underflow_out: 0 dbz_out: 0
+# 81 [SCOREBOARD]: INPUT:: a_in: -3.907588 b_in: -19.580208
+# 82 [SCOREBOARD]: PASS:: fpm_out: 0.199568 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.199568 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 91 [SCOREBOARD]: INPUT:: a_in: -40.869900 b_in: 1.205674
+# 92 [SCOREBOARD]: PASS:: fpm_out: -33.897976 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -33.897976 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 101 [SCOREBOARD]: INPUT:: a_in: -0.004403 b_in: -194.075195
+# 102 [SCOREBOARD]: PASS:: fpm_out: 0.000023 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: 0.000023 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# ** Note: $finish    : ../testbench/fpd_tb_top.sv(65)
+#    Time: 107 ns  Iteration: 0  Instance: /fpd_tb_top
+# End time: 10:31:18 on Nov 03,2022, Elapsed time: 0:01:37
+
+# [TB_TOP] Running OFUF_TEST
+#
+# ** Error (suppressible): (vsim-8604) ../testbench/./tb_classes/scoreboard.svh(26): NaN (not a number) resulted from a division operation.     
+# 1 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 0.000000
+# 2 [SCOREBOARD]: FAIL:: fpm_out: 0.000000 overflow_out: 0 underflow_out: 0 dbz_out: x || Predicted => fpm_out: -nan(ind) overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 11 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: -29422626216607744.000000
+# 12 [SCOREBOARD]: PASS:: fpm_out: -0.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -0.000000 overflow_out: 0 underflow_out: 0 dbz_out: 0
+# 21 [SCOREBOARD]: INPUT:: a_in: -0.000000 b_in: 93753934994406235938226176.000000
+# 22 [SCOREBOARD]: FAIL:: fpm_out: -121353608249557431353344.000000 overflow_out: 0 underflow_out: 1 dbz_out: 0 || Predicted => fpm_out: -0.000000 overflow_out: 0 underflow_out: 1 dbz_out: 0
+# 31 [SCOREBOARD]: INPUT:: a_in: -0.000000 b_in: -4070879683225325491677072195584.000000
+# 32 [SCOREBOARD]: FAIL:: fpm_out: 5682226669844057236176896.000000 overflow_out: 0 underflow_out: 1 dbz_out: 0 || Predicted => fpm_out: 0.000000 overflow_out: 0 underflow_out: 1 dbz_out: 0
+# 41 [SCOREBOARD]: INPUT:: a_in: -0.000000 b_in: -51482380170797514752.000000
+# 42 [SCOREBOARD]: FAIL:: fpm_out: 10927685657821834210167816232500199424.000000 overflow_out: 0 underflow_out: 1 dbz_out: 0 || Predicted => fpm_out: 0.000000 overflow_out: 0 underflow_out: 1 dbz_out: 0
+# 51 [SCOREBOARD]: INPUT:: a_in: 0.000000 b_in: 359346717867519246336.000000
+# 52 [SCOREBOARD]: FAIL:: fpm_out: 903887877067597709846773760.000000 overflow_out: 0 underflow_out: 1 dbz_out: 0 || Predicted => fpm_out: 0.000000 overflow_out: 0 underflow_out: 1 dbz_out: 0
+# 61 [SCOREBOARD]: INPUT:: a_in: -19521308593248527563685833474048.000000 b_in: -0.000000
+# 62 [SCOREBOARD]: FAIL:: fpm_out: 0.000000 overflow_out: 1 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: inf overflow_out: 1 underflow_out: 0 dbz_out: 0
+# 71 [SCOREBOARD]: INPUT:: a_in: -362241905431412736.000000 b_in: 0.000000
+# 72 [SCOREBOARD]: FAIL:: fpm_out: -0.000000 overflow_out: 1 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -inf overflow_out: 1 underflow_out: 0 dbz_out: 0
+# 81 [SCOREBOARD]: INPUT:: a_in: -75583735284477701065277440.000000 b_in: -0.000000
+# 82 [SCOREBOARD]: FAIL:: fpm_out: 0.000000 overflow_out: 1 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: inf overflow_out: 1 underflow_out: 0 dbz_out: 0
+# 91 [SCOREBOARD]: INPUT:: a_in: -193002644736489570697216.000000 b_in: 0.000000
+# 92 [SCOREBOARD]: FAIL:: fpm_out: -0.000000 overflow_out: 1 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: -inf overflow_out: 1 underflow_out: 0 dbz_out: 0
+# 101 [SCOREBOARD]: INPUT:: a_in: -11430463742153856495339027038208.000000 b_in: -0.000000
+# 102 [SCOREBOARD]: FAIL:: fpm_out: 0.000000 overflow_out: 1 underflow_out: 0 dbz_out: 0 || Predicted => fpm_out: inf overflow_out: 1 underflow_out: 0 dbz_out: 0
+# ** Note: $finish    : ../testbench/fpd_tb_top.sv(65)
+#    Time: 107 ns  Iteration: 0  Instance: /fpd_tb_top
+# End time: 10:34:22 on Nov 03,2022, Elapsed time: 0:02:28
