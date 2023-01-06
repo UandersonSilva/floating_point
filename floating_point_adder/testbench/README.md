@@ -2,7 +2,7 @@
 
 This oriented object testnebch inserts stimulus in the device under test (DUT) and checks the results automatically.  
 
-## Strucutre
+## Structure
 ![oo_tb stucture](../../alib/oo_testbench_diagram.svg)
 
 Here: 
