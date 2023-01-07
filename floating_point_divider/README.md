@@ -9,7 +9,12 @@ To do that, the fp_divider executes the following steps:
  ![fpd sub](../alib/fpd_sub.svg)  
  - Divide the manstissas (with the implicit bit defined earlier) using fixed point mode;  
  ![fpd division](../alib/fpd_division.svg)   
-
+ - Define the output signal bit (Sa **xor** Sb);  
+ ![fpd signal](../alib/fpd_signal.svg)   
+ - Normalize the result, finding the leading 1 and either shifting right and incrementing the expoent or shifting left and decrementing the expoent;  
+ ![fpd normalize](../alib/fpd_normalize.svg)   
+ - Round off the bits shifted out due to the normalization proccess if necessary.  
+![fpd result](../alib/fpd_result.svg)   
 
  ## Structure
 
